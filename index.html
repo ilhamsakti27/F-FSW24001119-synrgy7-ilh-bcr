@@ -10,32 +10,7 @@
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <!-- 
-      untuk bagian navbar bisa menggunakan offcanvas, seingga ada efek backdropnya
-      referensi:
-      https://getbootstrap.com/docs/5.2/examples/navbars-offcanvas/
-      https://getbootstrap.com/docs/5.0/components/offcanvas/
-     -->
     <header class="header--color" style="background-color: rgba(241, 243, 255, 1);">
-      <!-- <nav class="navbar navbar-expand-lg " aria-label="Offcanvas navbar large">
-        <div class="container">
-          <a class="navbar-brand" href="#">Binar Car Rental</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav ms-auto">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-              <a class="nav-link navbar__item navbar__item--margin" href="#">Our Services</a>
-              <a class="nav-link navbar__item navbar__item--margin" href="#">Why Us</a>
-              <a class="nav-link navbar__item navbar__item--margin" href="#">Testimonial</a>
-              <a class="nav-link navbar__item navbar__item--margin" href="#">FAQ</a>
-              <button type="button" class="btn btn-success button--primaryLimeGreen navbar__item--margin">Register</button>
-            </div>
-          </div>
-        </div>
-      </nav> -->
-      
       <nav class="navbar navbar-expand-lg" aria-label="Offcanvas navbar large">
         <div class="container">
           <a class="navbar-brand" href="#home">Binar Car Rental</a>
@@ -48,7 +23,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <ul class="navbar-nav justify-content-end flex-grow-1">
                 <li class="nav-item">
                   <a class="nav-link navbar__item" href="#">Our Services</a>
                 </li>
@@ -62,7 +37,7 @@
                   <a class="nav-link navbar__item" href="#">FAQ</a>
                 </li>
                 <li class="nav-item">
-                  <button type="button" class="btn btn-success button--primaryLimeGreen">Register</button>
+                  <button type="button" class="btn btn-success button--primaryLimeGreen btn-register">Register</button>
                 </li>
               </ul>
             </div>
@@ -72,174 +47,172 @@
 
     </header>
 
-
-
     <!-- section home -->
-    <!-- <section class="home--color">
-      <article class="container pt-4 py-sm-5 pb-lg-0 d-flex flex-column flex-sm-row align-items-center home__block">
+    <section class="home--color">
+      <article class="container pb-lg-0 d-flex flex-column flex-sm-row align-items-center home__block">
         <header class="header--width block" >
           <h1 class="header__home--font">Sewa & Rental Mobil Terbaik di kawasan Surabaya</h1>
           <p class="body__paragraph">Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas terbaik dengan harga terjangkau. Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.</p>
           <button type="button" class="btn btn-success button--primaryLimeGreen">Mulai Sewa Mobil</button>
         </header>
-        <div class="">
+        <div class="box__image">
           <img src="./images/img_car.png" class="img-fluid image--margin-top block__image" alt="Gambar Mobil">
         </div>
       </article>
-    </section> -->
+    </section>
 
     <!-- section our services -->
-    <!-- <section class="ourservices container mt-5 ">
-        <article class="d-flex flex-column flex-sm-row row-sm align-items-center">
-          <div class="d-flex justify-content-center justify-content-sm-start mb-4 col-sm">
-            <img class="outservices__images" src="./images/img_service.png" alt="image service">
-          </div>
-          <div class="col-sm align-items-center pt-sm-4">
-            <h2 class="ourservices__title">Best Car Rental for any kind of trip in Surabaya!</h2>
-            <p class="ourservices__text">Sewa mobil di Surabaya bersama Binar Car Rental jaminan harga lebih murah dibandingkan yang lain, kondisi mobil baru, serta kualitas pelayanan terbaik untuk perjalanan wisata, bisnis, wedding, meeting, dll.</p>
-            <ul class="ourservices__text ourservices__list p-0 my-0">
-              <li class="">
-                <img class="me-2 my-1" src="./images/Group 53.png" alt="">
-                Sewa Mobil Dengan Supir di Bali 12 Jam
-              </li>
-              <li>
-                <img class="me-2 my-1" src="./images/Group 53.png" alt="">
-                Sewa Mobil Lepas Kunci di Bali 24 Jam
-              </li>
-              <li>
-                <img class="me-2 my-1" src="./images/Group 53.png" alt="">
-                Sewa Mobil Jangka Panjang Bulanan
-              </li>
-              <li>
-                <img class="me-2 my-1" src="./images/Group 53.png" alt="">
-                Gratis Antar - Jemput Mobil di Bandara
-              </li>
-              <li>
-                <img class="me-2 my-1" src="./images/Group 53.png" alt="">
-                Layanan Airport Transfer / Drop In Out
-              </li>
-            </ul>
-          </div>
-        </article>
-      </section> -->
+    <section class="ourservices container mt-5 ">
+      <article class="d-flex flex-column flex-sm-row row-sm align-items-center">
+        <div class="d-flex justify-content-center justify-content-sm-start mb-4 col-sm">
+          <img class="outservices__images" src="./images/img_service.png" alt="image service">
+        </div>
+        <div class="col-sm align-items-center pt-sm-4">
+          <h2 class="ourservices__title">Best Car Rental for any kind of trip in Surabaya!</h2>
+          <p class="ourservices__text">Sewa mobil di Surabaya bersama Binar Car Rental jaminan harga lebih murah dibandingkan yang lain, kondisi mobil baru, serta kualitas pelayanan terbaik untuk perjalanan wisata, bisnis, wedding, meeting, dll.</p>
+          <ul class="ourservices__text ourservices__list p-0 my-0">
+            <li class="">
+              <img class="me-2 my-1" src="./images/Group 53.png" alt="">
+              Sewa Mobil Dengan Supir di Bali 12 Jam
+            </li>
+            <li>
+              <img class="me-2 my-1" src="./images/Group 53.png" alt="">
+              Sewa Mobil Lepas Kunci di Bali 24 Jam
+            </li>
+            <li>
+              <img class="me-2 my-1" src="./images/Group 53.png" alt="">
+              Sewa Mobil Jangka Panjang Bulanan
+            </li>
+            <li>
+              <img class="me-2 my-1" src="./images/Group 53.png" alt="">
+              Gratis Antar - Jemput Mobil di Bandara
+            </li>
+            <li>
+              <img class="me-2 my-1" src="./images/Group 53.png" alt="">
+              Layanan Airport Transfer / Drop In Out
+            </li>
+          </ul>
+        </div>
+      </article>
+    </section>
 
     <!-- section why us -->
-    <!-- <section class="whyus container mt-5">
-        <article>
-          <h2 class="whyus__title">Why Us?</h2>
-          <p class="whyus__text">Mengapa harus pilih Binar Car Rental?</p>
-        </article>
-        <article class="d-flex flex-column flex-sm-row gap-3">
-          <div class="card">
-            <div class="card__body">
-              <img src="./images/icon_complete.png" class="card__image" alt="icon complete">
-              <h5 class="card__title">Mobil Lengkap</h5>
-              <p class="card__text">Tersedia banyak pilihan mobil, kondisi masih baru, bersih dan terawat</p>
-            </div>
+    <section class="whyus container mt-5">
+      <article class="text-center text-sm-start">
+        <h2 class="whyus__title">Why Us?</h2>
+        <p class="whyus__text">Mengapa harus pilih Binar Car Rental?</p>
+      </article>
+      <article class="d-flex flex-column flex-sm-row gap-3">
+        <div class="card">
+          <div class="card__body">
+            <img src="./images/icon_complete.png" class="card__image" alt="icon complete">
+            <h5 class="card__title">Mobil Lengkap</h5>
+            <p class="card__text">Tersedia banyak pilihan mobil, kondisi masih baru, bersih dan terawat</p>
           </div>
-          <div class="card">
-            <div class="card__body">
-              <img src="./images/icon_price.png" class="card__image" alt="icon price">
-              <h5 class="card__title">Harga Murah</h5>
-              <p class="card__text">Harga murah dan bersaing, bisa bandingkan harga kami dengan rental mobil lain</p>
-            </div>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <img src="./images/icon_price.png" class="card__image" alt="icon price">
+            <h5 class="card__title">Harga Murah</h5>
+            <p class="card__text">Harga murah dan bersaing, bisa bandingkan harga kami dengan rental mobil lain</p>
           </div>
-          <div class="card">
-            <div class="card__body">
-              <img src="./images/icon_24hrs.png" class="card__image" alt="icon complete">
-              <h5 class="card__title">Layanan 24 Jam</h5>
-              <p class="card__text">Siap melayani kebutuhan Anda selama 24 jam nonstop. Kami juga tersedia di akhir minggu</p>
-            </div>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <img src="./images/icon_24hrs.png" class="card__image" alt="icon complete">
+            <h5 class="card__title">Layanan 24 Jam</h5>
+            <p class="card__text">Siap melayani kebutuhan Anda selama 24 jam nonstop. Kami juga tersedia di akhir minggu</p>
           </div>
-          <div class="card">
-            <div class="card__body">
-              <img src="./images/icon_professional.png" class="card__image" alt="icon complete">
-              <h5 class="card__title">Sopir Profesional</h5>
-              <p class="card__text">Sopir yang profesional, berpengalaman, jujur, ramah dan selalu tepat waktu</p>
-            </div>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <img src="./images/icon_professional.png" class="card__image" alt="icon complete">
+            <h5 class="card__title">Sopir Profesional</h5>
+            <p class="card__text">Sopir yang profesional, berpengalaman, jujur, ramah dan selalu tepat waktu</p>
           </div>
-        </article>
-      </section> -->
+        </div>
+      </article>
+    </section>
 
     <!-- section testimoni -->
-    <!-- <section class="testimonial container-fluid mt-5">
-        <article class="text-center">
-          <h2 class="testimonial__title mb-2">Testimonial</h2>
-          <p class="testimonial__text">Berbagai review positif dari para pelanggan kami</p>
-        </article>
-        <article>
-          <div id="carouselExampleIndicators" class="carousel slide">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="card__carousel d-flex flex-column flex-sm-row">
-                  <div class="card__image-top">
-                    <img src="./images/img_photo.png" class="carousel__image img-fluid mx-auto d-block" alt="photo">
-                  </div>
-                  <div class="card__body">
-                    <div class="text-center text-sm-start my-2">
-                      <img src="./images/Star 1.svg" alt="star1">
-                      <img src="./images/Star 1.svg" alt="star2">
-                      <img src="./images/Star 1.svg" alt="star3">
-                      <img src="./images/Star 1.svg" alt="star4">
-                      <img src="./images/Star 1.svg" alt="star5">
-                    </div>
-                    <p class="card__text">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod”</p>
-                    <h5 class="card__carousel__title mt-2">John Dee 32, Bromo</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="card__carousel d-flex flex-column flex-sm-row">
-                  <div class="card__image-top">
-                    <img src="./images/img_photo.png" class="carousel__image img-fluid mx-auto d-block" alt="photo">
-                  </div>
-                  <div class="card__body">
-                    <div class="text-center text-sm-start my-2">
-                      <img src="./images/Star 1.svg" alt="star1">
-                      <img src="./images/Star 1.svg" alt="star2">
-                      <img src="./images/Star 1.svg" alt="star3">
-                      <img src="./images/Star 1.svg" alt="star4">
-                      <img src="./images/Star 1.svg" alt="star5">
-                    </div>
-                    <p class="card__text">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod”</p>
-                    <h5 class="card__carousel__title mt-2">John Dee 32, Bromo</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="card__carousel d-flex flex-column flex-sm-row">
-                  <div class="card__image-top">
-                    <img src="./images/img_photo-1.png" class="carousel__image img-fluid mx-auto d-block" alt="photo">
-                  </div>
-                  <div class="card__body">
-                    <div class="text-center text-sm-start my-2">
-                      <img src="./images/Star 1.svg" alt="star1">
-                      <img src="./images/Star 1.svg" alt="star2">
-                      <img src="./images/Star 1.svg" alt="star3">
-                      <img src="./images/Star 1.svg" alt="star4">
-                      <img src="./images/Star 1.svg" alt="star5">
-                    </div>
-                    <p class="card__text">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod”</p>
-                    <h5 class="card__carousel__title mt-2">John Dee 32, Bromo</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+    <section class="testimonial container-fluid mt-5">
+      <article class="text-center">
+        <h2 class="testimonial__title mb-2">Testimonial</h2>
+        <p class="testimonial__text">Berbagai review positif dari para pelanggan kami</p>
+      </article>
+      <article>
+        <div id="carouselExampleIndicators" class="carousel slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
           </div>
-        </article> -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="card__carousel d-flex flex-column flex-sm-row">
+                <div class="card__image-top">
+                  <img src="./images/img_photo.png" class="carousel__image img-fluid mx-auto d-block" alt="photo">
+                </div>
+                <div class="card__body">
+                  <div class="text-center text-sm-start my-2">
+                    <img src="./images/Star 1.svg" alt="star1">
+                    <img src="./images/Star 1.svg" alt="star2">
+                    <img src="./images/Star 1.svg" alt="star3">
+                    <img src="./images/Star 1.svg" alt="star4">
+                    <img src="./images/Star 1.svg" alt="star5">
+                  </div>
+                  <p class="card__text">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod”</p>
+                  <h5 class="card__carousel__title mt-2">John Dee 32, Bromo</h5>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card__carousel d-flex flex-column flex-sm-row">
+                <div class="card__image-top">
+                  <img src="./images/img_photo.png" class="carousel__image img-fluid mx-auto d-block" alt="photo">
+                </div>
+                <div class="card__body">
+                  <div class="text-center text-sm-start my-2">
+                    <img src="./images/Star 1.svg" alt="star1">
+                    <img src="./images/Star 1.svg" alt="star2">
+                    <img src="./images/Star 1.svg" alt="star3">
+                    <img src="./images/Star 1.svg" alt="star4">
+                    <img src="./images/Star 1.svg" alt="star5">
+                  </div>
+                  <p class="card__text">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod”</p>
+                  <h5 class="card__carousel__title mt-2">John Dee 32, Bromo</h5>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card__carousel d-flex flex-column flex-sm-row">
+                <div class="card__image-top">
+                  <img src="./images/img_photo-1.png" class="carousel__image img-fluid mx-auto d-block" alt="photo">
+                </div>
+                <div class="card__body">
+                  <div class="text-center text-sm-start my-2">
+                    <img src="./images/Star 1.svg" alt="star1">
+                    <img src="./images/Star 1.svg" alt="star2">
+                    <img src="./images/Star 1.svg" alt="star3">
+                    <img src="./images/Star 1.svg" alt="star4">
+                    <img src="./images/Star 1.svg" alt="star5">
+                  </div>
+                  <p class="card__text">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod”</p>
+                  <h5 class="card__carousel__title mt-2">John Dee 32, Bromo</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </article>
 
     <!-- coba -->
     <!-- <p>----</p>
@@ -304,18 +277,18 @@
     <!-- </section> -->
 
     <!-- lokasi -->
-    <!-- <section class="container mt-5">
+    <section class="container mt-5">
       <article class="text-center p-5 lokasi__bg-color">
         <h2 class="text-light mb-3">Sewa Mobil di (Lokasimu) Sekarang</h2>
         <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         <button type="button" class="btn btn-success button--primaryLimeGreen mt-4">Mulai Sewa Mobil</button>
       </article>
-    </section> -->
+    </section>
 
     <!-- FAQ -->
-    <!-- <section class="container mt-5 mb-3">
+    <section class="container mt-5 mb-3">
       <article class="d-flex flex-column flex-sm-row">
-        <div class="text-center flex-fill faq__header">
+        <div class="text-center text-sm-start flex-fill faq__header">
           <h2 class="faq__title">Frequently Asked Question</h2>
           <p class="faq__text">Lorem ipsum dolor sit amet, consectetur adipiscing</p>
         </div>
@@ -374,9 +347,9 @@
           </div>
         </div>
       </article>
-    </section> -->
+    </section>
 
-    <!-- <footer class="container mt-5 mb-3 px-0 d-flex flex-column flex-sm-row">
+    <footer class="container mt-5 mb-3 px-0 d-flex flex-column flex-sm-row">
       <div class="container mt-3 me-2 flex-fill">
         <p class="footer__address__text">Jalan Suroyo No. 161 Mayangan Kota Probolonggo 672000</p>
         <p class="footer__address__text">binarcarrental@gmail.com</p>
@@ -402,7 +375,7 @@
         <p class="mb-1 footer__copyright__text">Copyright Binar 2022</p>
         <h5 class="mt-0">Binar Car Rental</h5>
       </div>
-    </footer> -->
+    </footer>
 
     <script src="jquery.min.js"></script>
     <script src="owl.carousel.min.js"></script>

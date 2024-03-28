@@ -7,9 +7,41 @@
   font-size: 14px;
   line-height: 20px;
   color: #000;
+  margin-right: 24px;
 }
-.navbar__item--margin {
-  margin-left: 32px;
+.navbar__item:hover {
+  text-decoration: underline;
+}
+.navbar-toggler {
+  border: 0;
+}
+#offcanvasNavbar2 {
+  width: 180px;
+  padding: 32px 24px 0 16px;
+}
+#offcanvasNavbar2Label {
+  font-family: Helvetica;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+  color: #000;
+}
+.offcanvas-header {
+  padding: 0;
+}
+.offcanvas-body {
+  padding: 0;
+  margin-top: 16px;
+}
+/* .offcanvas-body > ul {
+  padding-right: 0;
+} */
+.btn-close {
+  --bs-btn-close-opacity: 1;
+}
+.btn-register {
+  margin-top: 8px;
 }
 .button--primaryLimeGreen {
   border-radius: 2px;
@@ -21,9 +53,9 @@
   background: #5CB85F;
   border: none;
 }
-.home {
-  margin-top: 32px;
-}
+/* .home__block {
+  padding: 32px;
+} */
 .body__paragraph {
   font-weight: 300;
   font-size: 14px;
@@ -37,10 +69,22 @@
 .image--margin-top {
   margin-top: 24px;
 }
+header {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
 .home--color, 
 .header--color {
   background-color: rgba(241, 243, 255, 1); 
 }
+/* .box__image{
+  position: relative;
+} */
+/* .block__image {
+  position: absolute;
+  right: 0;
+  width: 96%;
+} */
 .ourservices--margin-top {
   margin-top: 60px;
 }
@@ -137,6 +181,9 @@
   text-align: left;
   color: rgba(0, 0, 0, 1);
 }
+.footer__socmed__text{
+  margin-bottom: 0px;
+}
 .footer__menu__text {
   font-family: Helvetica;
   font-size: 14px;
@@ -149,7 +196,8 @@
 .footer__image {
   width: 32px;
   height: 32px;
-  margin-right: 16px;
+  margin-right: 8px;
+  margin-top: 8px;
 }
 
 
@@ -173,20 +221,30 @@
   }
 }
 @media only screen and (min-width: 750px) {
-  .block__image {
+  /* .block__image {
     margin-left: 12%;
-  }
+  } */
 }
 @media only screen and (min-width: 820px) {
-  .block__image {
+  /* .block__image {
     margin-left: 18%;
     width: 1000px;
+  } */
+}
+@media only screen and (min-width: 992px) {
+  #offcanvasNavbar2 {
+    padding: 0;
   }
+  .btn-register,
+  .offcanvas-body {
+    margin-top: 0;
+  }
+
 }
 @media only screen and (min-width: 1720px) {
-  .block__image {
+  /* .block__image {
     margin-left: 38%;
-  }
+  } */
   .owl-carousel .owl-item img {
     width: 100%;
     /* display: inline-block; */
@@ -196,8 +254,8 @@
   .header--width  {
     width: 200rem;
   }
-  .block__image {
+  /* .block__image {
     margin-left: 18.5rem;
     width: 300rem;
-  }
+  } */
 }
