@@ -1,0 +1,278 @@
+<!-- 
+  **note:
+  - input calendar masih belum sesuai dengan design figma.
+  - listener terkait custom input belum sempurna, jadi tombol "Cari Mobil" tidak aktif saat mandatory input sudah diisi
+ -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Binar Car Rental</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="./owl.carousel.min.css">
+    <link rel="stylesheet" href="./owl.theme.default.min.css">
+    <link rel="stylesheet" href="./style.css"> -->
+    <link rel="stylesheet" href="./css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <header class="header--color" style="background-color: rgba(241, 243, 255, 1);">
+      <nav class="navbar navbar-expand-lg" aria-label="Offcanvas navbar large">
+        <div class="container">
+          <a class="navbar-brand" href="./index.html">Binar Car Rental</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end navbar-offcanvas" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbar2Label">BCR</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1">
+                <li class="nav-item">
+                  <a class="nav-link navbar__item" href="#">Our Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link navbar__item" href="#">Why Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link navbar__item" href="#">Testimony</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link navbar__item" href="#">FAQ</a>
+                </li>
+                <li class="nav-item">
+                  <button type="button" class="btn btn-success button--primaryLimeGreen btn-register">Register</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- section home -->
+    <section class="home--color" id="hero">
+      <article class="container">
+        <div class="row d-flex align-items-center">
+          <div class="col-12 col-md-6 " >
+            <h1 class="header__home--font">Sewa & Rental Mobil Terbaik di kawasan Surabaya</h1>
+            <p class="body__paragraph">Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas terbaik dengan harga terjangkau. Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.</p>
+            <button type="button" class="btn btn-success button--primaryLimeGreen" hidden>Mulai Sewa Mobil</button>
+          </div>
+          <div class="col-12 col-md-6 align-self-end pt-3 pt-sm-0">
+            <img src="./images/img_car1.png" class="img-fluid" alt="Gambar Mobil">
+            <div class="bg-car"></div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <div class="overlay" id="overlay"></div>
+
+    <!-- cari mobil -->    
+    <div class="container position-relative">
+      <form class="row align-items-end g-3  w-100 position-absolute top-50 start-50 translate-middle p-3 m-auto z-2" id="findCarForm">
+      <!-- <form class="row align-items-end g-3  w-100  p-3 m-auto z-2" id="findCarForm"> -->
+        <!-- tipe driver -->
+        <div class="col m-0">
+          <label for="driverType" class="form-label">Tipe Driver</label>
+          <div class="dropdown">
+            <button class="btn btn-light w-100 text-start d-flex justify-content-between align-items-center dropdown--border" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              Pilih Tipe Driver
+              <img class="float-end chevron-icon" src="./images/fi_chevron-down.svg" alt="icon dropdown">
+            </button>
+            <ul class="dropdown-menu p-0 w-100" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="#" onclick="selectDriverType('Dengan Sopir')">Dengan Sopir</a></li>
+              <li><a class="dropdown-item" href="#" onclick="selectDriverType('Tanpa Sopir (Lepas Kunci)')">Tanpa Sopir (Lepas Kunci)</a></li>
+            </ul>
+          </div>
+          <!-- Hidden input to store the selection -->
+          <input type="text" id="driverType" name="driverType" value="0">
+        </div>
+
+        <!-- tanggal -->
+        <!-- TANGGAL BELUM -->
+        <div class="col m-0">
+          <label for="datePicker" class="form-label">Tanggal</label>
+          <div class="dropdown">
+            <input type="date" name="datePicker" id="datePicker" class="w-100 dropdown--border" value="0">
+          </div>
+        </div>
+
+        <!-- Waktu Jemput/Ambil -->
+        <div class="col m-0">
+          <label for="pickupTime" class="form-label">Waktu Jemput/Ambil</label>
+          <div class="dropdown">
+            <button class="btn btn-light w-100 text-start d-flex justify-content-between align-items-center dropdown--border" type="button" id="dropdownMenuButtonPickupTime" data-bs-toggle="dropdown" aria-expanded="false">
+              Pilih Waktu
+              <img class="float-end chevron-icon" src="./images/fi_clock.svg" alt="icon dropdown">
+            </button>
+            <ul class="dropdown-menu p-0 w-100" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="#" onclick="selectPickupTime('08.00')">08.00 <span class="float-end">WIB</span></a></li>
+              <li><a class="dropdown-item" href="#" onclick="selectPickupTime('09.00')">09.00 <span class="float-end">WIB</span></a></li>
+              <li><a class="dropdown-item" href="#" onclick="selectPickupTime('10.00')">10.00 <span class="float-end">WIB</span></a></li>
+              <li><a class="dropdown-item" href="#" onclick="selectPickupTime('11.00')">11.00 <span class="float-end">WIB</span></a></li>
+              <li><a class="dropdown-item" href="#" onclick="selectPickupTime('12.00')">12.00 <span class="float-end">WIB</span></a></li>
+            </ul>
+          </div>
+          <!-- Hidden input to store the selection -->
+          <input type="hidden" id="pickupTime" name="pickupTime" value="0">
+        </div>
+
+        <!-- Jumlah Penumpang (optional) -->
+        <div class="col m-0">
+          <label for="passengerCount" class="form-label">Jumlah Penumpang (optional)</label>
+          <div class="dropdown position-relative inline-block">
+            <input type="number" class="w-100 dropdown--border" id="passengerCount" name="passengerCount" placeholder="Jumlah Penumpang" value="">
+            <img class="float-end chevron-icon" src="./images/fi_users.svg" alt="icon dropdown">
+          </div>
+        </div>
+        
+        <div class="col-md-1 m-0 p-0 position-relative">
+          <!-- <button class="btn btn-success position-absolute bottom-50 end-0 btn__submit" type="submit" disabled>Cari Mobil</button> -->
+          <button class="btn btn-success position-absolute bottom-50 end-0 btn__submit" type="submit">Cari Mobil</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- cari mobil -->
+
+
+    <!-- filter result -->
+    <div id="filterResults" class="container">
+      <div class="d-flex flex-wrap justify-content-between">
+        <div class="card" style="width: 22rem;">
+          <img src="./images/image1.png" class="card-img-top" alt="...">
+          <div class="card-body p-0">
+            <p class="car-name">Nama/Tipe Mobil</p>
+            <h5 class="card-title car-price">Rp 430.000 / hari</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            <div class="card-text">
+              <img src="./images/fi_users_light.svg" alt="">
+              <span class="ms-2">4 orang</span>
+            </div>
+            <div class="card-text">
+              <img src="./images/fi_settings_light.svg" alt="">
+              <span class="ms-2">Manual</span>
+            </div>
+            <div class="card-text mb-24">
+              <img src="./images/fi_calendar_light.svg" alt="">
+              <span class="ms-2">Tahun 2020</span>
+            </div>
+            <button class="btn btn-success w-100 btn__submit" type="submit">Cari Mobil</button>
+          </div>
+        </div>
+
+        <div class="card" style="width: 22rem;">
+          <img src="./images/image1.png" class="card-img-top" alt="...">
+          <div class="card-body p-0">
+            <p class="car-name">Nama/Tipe Mobil</p>
+            <h5 class="card-title car-price">Rp 430.000 / hari</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            <div class="card-text">
+              <img src="./images/fi_users_light.svg" alt="">
+              <span class="ms-2">4 orang</span>
+            </div>
+            <div class="card-text">
+              <img src="./images/fi_settings_light.svg" alt="">
+              <span class="ms-2">Manual</span>
+            </div>
+            <div class="card-text mb-24">
+              <img src="./images/fi_calendar_light.svg" alt="">
+              <span class="ms-2">Tahun 2020</span>
+            </div>
+            <button class="btn btn-success w-100 btn__submit" type="submit">Cari Mobil</button>
+          </div>
+        </div>
+
+        <div class="card" style="width: 22rem;">
+          <img src="./images/image1.png" class="card-img-top" alt="...">
+          <div class="card-body p-0">
+            <p class="car-name">Nama/Tipe Mobil</p>
+            <h5 class="card-title car-price">Rp 430.000 / hari</h5>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            <div class="card-text">
+              <img src="./images/fi_users_light.svg" alt="">
+              <span class="ms-2">4 orang</span>
+            </div>
+            <div class="card-text">
+              <img src="./images/fi_settings_light.svg" alt="">
+              <span class="ms-2">Manual</span>
+            </div>
+            <div class="card-text mb-24">
+              <img src="./images/fi_calendar_light.svg" alt="">
+              <span class="ms-2">Tahun 2020</span>
+            </div>
+            <button class="btn btn-success w-100 btn__submit" type="submit">Cari Mobil</button>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+    <!-- filter result -->
+
+    <footer class="container mt-5 mb-3 px-0 pt-5 d-flex flex-column flex-sm-row">
+      <div class="container mt-3 me-2 flex-fill">
+        <p class="footer__address__text">Jalan Suroyo No. 161 Mayangan Kota Probolonggo 672000</p>
+        <p class="footer__address__text">binarcarrental@gmail.com</p>
+        <p class="footer__address__text">081-233-334-808</p>
+      </div>
+      <div class="container mt-3 ms-sm-2 me-sm-2 flex-fill footer__menu">
+        <p class="footer__menu__text fw-semibold">Our services</p>
+        <p class="footer__menu__text fw-semibold">Why Us</p>
+        <p class="footer__menu__text fw-semibold">Testimonial</p>
+        <p class="footer__menu__text fw-semibold">FAQ</p>
+      </div>
+      <div class="container mt-3 ms-sm-2 me-sm-2 flex-fill">
+        <p class="footer__socmed__text">Connect with us</p>
+        <div>
+          <img class="footer__image" src="./images/icon_facebook.png" alt="icon facebook">
+          <img class="footer__image" src="./images/icon_instagram.png" alt="icon instagram">
+          <img class="footer__image" src="./images/icon_twitter.png" alt="icon twitter">
+          <img class="footer__image" src="./images/icon_mail.png" alt="icon mail">
+          <img class="footer__image" src="./images/icon_twitch.png" alt="icon icon_twitch">
+        </div>
+      </div>
+      <div class="container mt-3 mb-5 ms-sm-2 flex-fill">
+        <p class="mb-1 footer__copyright__text">Copyright Binar 2022</p>
+        <h5 class="mt-0">Binar Car Rental</h5>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- <script src="jquery.min.js"></script> -->
+    <!-- <script src="owl.carousel.min.js"></script> -->
+    <script src="./scripts/jquery.min.js"></script>
+    <script src="./scripts/owl.carousel.min.js"></script>
+    <script>
+      $('.owl-carousel').owlCarousel({
+        center: true,
+        loop: true,
+        items:2,
+        margin: 40,
+        nav: true,
+        responsive:{
+          0:{
+            items:1
+          },
+          600:{
+            items:1
+          },
+          800:{
+            items:2
+          },
+          1000:{
+            items:2
+          }
+        }
+      })
+    </script>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>
