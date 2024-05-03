@@ -41,12 +41,27 @@ class Car {
 
   render() {
     return `
-      <p>id: <b>${this.id}</b></p>
-      <p>plate: <b>${this.plate}</b></p>
-      <p>manufacture: <b>${this.manufacture}</b></p>
-      <p>model: <b>${this.model}</b></p>
-      <p>available at: <b>${this.availableAt}</b></p>
-      <img src="${this.image}" alt="${this.manufacture}" width="64px">
+      <div class="card mb-3" style="width: 22rem;">
+        <img src="${this.image}" class="card-img-top object-fit-cover" alt="${this.type}" style="height: 12rem;">
+        <div class="card-body p-0 mt-3">
+          <p class="car-name">${this.type}</p>
+          <h5 class="card-title car-price">Rp ${this.rentPerDay.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')} / hari</h5>
+          <p class="card-text">${this.description}</p>
+          <div class="card-text">
+            <img src="./images/fi_users_light.svg" alt="">
+            <span class="ms-2">${this.capacity} orang</span>
+          </div>
+          <div class="card-text">
+            <img src="./images/fi_settings_light.svg" alt="">
+            <span class="ms-2">${this.transmission}</span>
+          </div>
+          <div class="card-text mb-24">
+            <img src="./images/fi_calendar_light.svg" alt="">
+            <span class="ms-2">Tahun ${this.year}</span>
+          </div>
+          <button class="btn btn-success w-100 btn__submit" type="submit">Pilih Mobil</button>
+        </div>
+      </div>
     `;
   }
 }

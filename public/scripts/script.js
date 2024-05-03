@@ -67,54 +67,13 @@ function selectPickupTime(type) {
   dropdownMenuButton.classList.add('dropdown--border--selected');
 }
 
-
-
-
-// // Melihat data yang diinputkan user
-// document.getElementById('findCarForm').addEventListener('submit', async (event) => {
-//   event.preventDefault(); // Mencegah form dari submit ke server secara default
-
-//   const driverType = document.getElementById('driverType').value;
-//   const datePicker = document.getElementById('datePicker').value;
-//   const pickupTime = document.getElementById('pickupTime').value.replace(/\./g, ':');
-//   const passengerCount = document.getElementById('passengerCount').value;
-
-//   const rentDateTime = datePicker + 'T' + pickupTime;
-
-//   // to ensure all input have been filled
-//   // if (driverType === "" || datePicker === "" || pickupTime === "") {
-//   //   alert("Silakan pilih isi semua input sebelum mengirim form.");
-//   //   return; // Menghentikan fungsi jika tipe driver tidak dipilih
-//   // }
-
-//   const filterParamCar = {
-//     driverType,
-//     rentDateTime,
-//     passengerCount: parseInt(passengerCount, 10)
-//   };
-
-//   const filteredCars = await Binar.listCars(filterParamCar);
-
-//   console.log(`
-//   Tipe Driver: ${driverType}
-//   Tanggal Jemput: ${datePicker}
-//   Waktu Jemput: ${pickupTime}
-//   Jumlah Penumppang: ${passengerCount}
-//   `);
-
-//   console.log(filteredCars);
-//   Car.init(filteredCars);
-// });
-// const submitButton = document.getElementById('submitButton'); 
-// submitButton.disabled = true;
-
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById('findCarForm');
   const driverType = document.getElementById('driverType');
   const datePicker = document.getElementById('datePicker');
   const pickupTime = document.getElementById('pickupTime');
+  const passengerCount = document.getElementById('passengerCount');
   const submitButton = document.getElementById('submitButton'); 
-  // submitButton.disabled = true;
 
   // Fungsi untuk memeriksa semua field dan meng-enable atau disable tombol submit
   function checkInputs() {
@@ -131,35 +90,29 @@ document.addEventListener("DOMContentLoaded", function () {
   datePicker.addEventListener('change', checkInputs);
   pickupTime.addEventListener('change', checkInputs);
 
-  // form.addEventListener('input', function () {
-  //   const driverType = document.getElementById('driverType').value;
-  //   const datePicker = document.getElementById('datePicker').value;
-  //   const pickupTime = document.getElementById('pickupTime').value;
-  //   const submitButton = document.querySelector('.btn__submit');
-
-  //   console.log(`
-  //     driver type: ${driverType}
-  //     date picker: ${datePicker}
-  //     pickup time: ${pickupTime}
-  //   `);
-
-  //   // button will on when driverType && datePicker && pickupTime have been filled
-  //   if (driverType && datePicker && pickupTime) {
-  //     submitButton.disabled = false;
-  //   } else {
-  //     submitButton.disabled = true;
-  //   }
-  // });
 
   // to deactive overlay
   form.addEventListener('submit', (event) => {
     event.preventDefault()
+    // remove overlay
     const overlay = document.querySelector('#overlay')
     overlay.classList.remove('overlay')
+
+    // ubah ke bentuk tipe datetime
+    const rentDateTime = new Date(datePicker.value + 'T' + pickupTime.value.replace(/\./g, ':'));
+
+    // request
+    const parameter = {
+      driverType :driverType.value,
+      rentDateTime: rentDateTime,
+      passengerCount: passengerCount.value
+    };
+
+    console.log(parameter);
+    const app = new App();
+    app.clear();
+    app.init(parameter).then(app.run);
   });
 
-  
-  // Menjalankan fungsi checkInputs sekali saat pertama kali script di-load
-  // checkInputs();
 
 });

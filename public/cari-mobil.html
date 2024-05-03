@@ -124,93 +124,16 @@
         </div>
         
         <div class="col-md-1 m-0 p-0 position-relative">
-          <button class="btn btn-success position-absolute bottom-50 end-0 btn__submit" id="submitButton" type="submit" disabled>Cari Mobilas</button>
-          <!-- <button class="btn btn-success position-absolute bottom-50 end-0 btn__submit" id="btnSubmit" type="submit">Cari Mobil</button> -->
+          <button class="btn btn-success position-absolute bottom-50 end-0 btn__submit" id="submitButton" type="submit" disabled>Cari Mobil</button>
         </div>
       </form>
     </div>
 
-    <!-- cari mobil -->
-
 
     <!-- filter result -->
     <div id="filterResults" class="container">
-      <div class="d-flex flex-wrap justify-content-between">
-        <div class="card" style="width: 22rem;">
-          <img src="./images/image1.png" class="card-img-top" alt="...">
-          <div class="card-body p-0">
-            <p class="car-name">Nama/Tipe Mobil</p>
-            <h5 class="card-title car-price">Rp 430.000 / hari</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-            <div class="card-text">
-              <img src="./images/fi_users_light.svg" alt="">
-              <span class="ms-2">4 orang</span>
-            </div>
-            <div class="card-text">
-              <img src="./images/fi_settings_light.svg" alt="">
-              <span class="ms-2">Manual</span>
-            </div>
-            <div class="card-text mb-24">
-              <img src="./images/fi_calendar_light.svg" alt="">
-              <span class="ms-2">Tahun 2020</span>
-            </div>
-            <button class="btn btn-success w-100 btn__submit" type="submit">Cari Mobil</button>
-          </div>
-        </div>
-
-        <div class="card" style="width: 22rem;">
-          <img src="./images/image1.png" class="card-img-top" alt="...">
-          <div class="card-body p-0">
-            <p class="car-name">Nama/Tipe Mobil</p>
-            <h5 class="card-title car-price">Rp 430.000 / hari</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-            <div class="card-text">
-              <img src="./images/fi_users_light.svg" alt="">
-              <span class="ms-2">4 orang</span>
-            </div>
-            <div class="card-text">
-              <img src="./images/fi_settings_light.svg" alt="">
-              <span class="ms-2">Manual</span>
-            </div>
-            <div class="card-text mb-24">
-              <img src="./images/fi_calendar_light.svg" alt="">
-              <span class="ms-2">Tahun 2020</span>
-            </div>
-            <button class="btn btn-success w-100 btn__submit" type="submit">Cari Mobil</button>
-          </div>
-        </div>
-
-        <div class="card" style="width: 22rem;">
-          <img src="./images/image1.png" class="card-img-top" alt="...">
-          <div class="card-body p-0">
-            <p class="car-name">Nama/Tipe Mobil</p>
-            <h5 class="card-title car-price">Rp 430.000 / hari</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-            <div class="card-text">
-              <img src="./images/fi_users_light.svg" alt="">
-              <span class="ms-2">4 orang</span>
-            </div>
-            <div class="card-text">
-              <img src="./images/fi_settings_light.svg" alt="">
-              <span class="ms-2">Manual</span>
-            </div>
-            <div class="card-text mb-24">
-              <img src="./images/fi_calendar_light.svg" alt="">
-              <span class="ms-2">Tahun 2020</span>
-            </div>
-            <button class="btn btn-success w-100 btn__submit" type="submit">Cari Mobil</button>
-          </div>
-        </div>
-
-        
-      </div>
+      <div id="cars-container" class="d-flex flex-wrap justify-content-between"></div>
     </div>
-    <!-- filter result -->
-
-    <button id="load-btn">Load</button>
-    <button id="clear-btn">Clear</button>
-    <div id="cars-container"></div>
-
 
     <footer class="container mt-5 mb-3 px-0 pt-5 d-flex flex-column flex-sm-row">
       <div class="container mt-3 me-2 flex-fill">

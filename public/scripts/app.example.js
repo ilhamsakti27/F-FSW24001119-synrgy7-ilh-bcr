@@ -1,18 +1,16 @@
 class App {
   constructor() {
-    this.clearButton = document.getElementById("clear-btn");
-    this.loadButton = document.getElementById("load-btn");
+    // this.clearButton = document.getElementById("clear-btn");
+    // this.loadButton = document.getElementById("load-btn");
     this.carContainerElement = document.getElementById("cars-container");
-    this.submitButton = document.getElementById("btnSubmit");
-    this.findCarForm = document.getElementById("findCarForm");
   }
 
-  async init() {
-    await this.load();
+  async init(params) {
+    await this.load(params);
 
     // Register click listener
-    this.clearButton.onclick = this.clear;
-    this.loadButton.onclick = this.run;
+    // this.clearButton.onclick = this.clear;
+    // this.loadButton.onclick = this.run;
     // this.submitButton.onclick = this.run;
     // this.findCarForm.onsubmit = this.run;
   }
@@ -25,8 +23,16 @@ class App {
     });
   };
 
-  async load() {
-    const cars = await Binar.listCars();
+  async load(params) {
+    // console.log(`Isi parameternya: ${params.rentDateTime}`);
+    const { driverType, rentDateTime, passengerCount} = params
+    const cars = await Binar.listCars(car => {
+      return (
+        car.availableAt >= rentDateTime && 
+        car.capacity >= passengerCount
+      )
+    });
+    // console.log(cars);
     Car.init(cars);
   }
 
