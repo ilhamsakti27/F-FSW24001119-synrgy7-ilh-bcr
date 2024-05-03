@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // request
     const parameter = {
-      driverType :driverType.value,
+      driverType: driverType.value === 'Dengan Sopir' ? true : false,
       rentDateTime: rentDateTime,
       passengerCount: passengerCount.value
     };
