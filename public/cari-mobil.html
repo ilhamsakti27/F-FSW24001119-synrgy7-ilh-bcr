@@ -74,22 +74,36 @@
     <!-- cari mobil -->    
     <div class="container position-relative">
       <form class="row align-items-end g-3  w-100 position-absolute top-50 start-50 translate-middle p-3 m-auto z-2" id="findCarForm">
-      <!-- <form class="row align-items-end g-3  w-100  p-3 m-auto z-2" id="findCarForm"> -->
         <!-- tipe driver -->
-        <div class="col m-0">
+        <!-- <div class="col m-0">
           <label for="driverType" class="form-label">Tipe Driver</label> <br>
           <select id="driverType" name="driverType" class="w-100">
             <option value disabled hidden selected>Pilih Tipe Driver</option>
             <option value="Dengan Sopir">Dengan Sopir</option>
             <option value="Tanpa Sopir (Lepas Kunci)">Tanpa Sopir (Lepas Kunci)</option>
           </select>
+        </div> -->
+        <div class="col m-0">
+          <label for="driverType" class="form-label">Tipe Driver</label>
+          <div class="dropdown">
+            <button class="btn btn-light w-100 text-start d-flex justify-content-between align-items-center dropdown--border" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              Pilih Tipe Driver
+              <img class="float-end chevron-icon" src="./images/fi_chevron-down.svg" alt="icon dropdown">
+            </button>
+            <ul class="dropdown-menu p-0 w-100" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="#" onclick="selectDriverType('Dengan Sopir')">Dengan Sopir</a></li>
+              <li><a class="dropdown-item" href="#" onclick="selectDriverType('Tanpa Sopir (Lepas Kunci)')">Tanpa Sopir (Lepas Kunci)</a></li>
+            </ul>
+          </div>
+          <!-- Hidden input to store the selection -->
+          <input type="hidden" id="driverType" name="driverType" value="0">
         </div>
 
         <!-- tanggal -->
         <!-- TANGGAL BELUM -->
         <div class="col m-0">
           <label for="datePicker" class="form-label">Tanggal</label>
-          <div class="dropdown">
+          <div class="dropdown" id="datePickerContainer">
             <input type="date" name="datePicker" id="datePicker" class="w-100 dropdown--border" value="">
           </div>
         </div>
@@ -117,7 +131,7 @@
         <!-- Jumlah Penumpang (optional) -->
         <div class="col m-0">
           <label for="passengerCount" class="form-label">Jumlah Penumpang (optional)</label>
-          <div class="dropdown position-relative inline-block">
+          <div class="dropdown position-relative inline-block" id="passengerCountContainer">
             <input type="number" class="w-100 dropdown--border" id="passengerCount" name="passengerCount" placeholder="Jumlah Penumpang" value="">
             <img class="float-end chevron-icon" src="./images/fi_users.svg" alt="icon dropdown">
           </div>

@@ -314,9 +314,11 @@ header {
   border-radius: 2px;
 }
 .dropdown--border:focus, 
-.dropdown--border:hover {
+.dropdown--border:hover,
+#passengerCountContainer:focus,
+#passengerCountContainer:hover {
   border: 1px solid rgba(92, 184, 95, 1);
-  /* border-radius: 2px; */
+  border-radius: 2px;
 }
 .dropdown--border--selected {
   color: black;

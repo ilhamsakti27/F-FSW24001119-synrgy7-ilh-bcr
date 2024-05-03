@@ -6,16 +6,27 @@ if (typeof require !== 'undefined') {
 }
 const mySelects = customSelect("select");
 
-// console.log(mySelects);
+// hidden submit indicator
+let isPickupTimeFilled = false;
+let isDatePicker = false;
+let isDriverTypeFilled = false;
 
+function checkInputs(input1, input2, input3) {
+  // Periksa apakah semua input telah terisi
+  if (input1 && input2 && input3) {
+    submitButton.disabled = false; // Meng-enable tombol jika semua kondisi terpenuhi
+  } else {
+    submitButton.disabled = true;  // Tetap disable jika salah satu belum terpenuhi
+  }
+}
 
 // fill input driver type with user input
 function selectDriverType(type) {
   // Set the value of the hidden input based on the selection
   const driverTypeInput = document.getElementById('driverType');
   driverTypeInput.value = type;
-  // Trigger the input event after changing the value
-  driverTypeInput.dispatchEvent(new Event('input'));
+  isDriverTypeFilled = true;
+  checkInputs(isDriverTypeFilled, isDatePicker, isPickupTimeFilled);
 
   // Change the button text to reflect the current selection
   const dropdownMenuButton = document.getElementById('dropdownMenuButton');
@@ -53,10 +64,13 @@ let config = { attributes: true, attributeFilter: ['class'] };
 observer.observe(ulElementToObserve, config);
 // Optionally, stop observing later with observer.disconnect();
 
+
 // fill input Pick-up Time with user input
 function selectPickupTime(type) {
   // Set the value of the hidden input based on the selection
   document.getElementById('pickupTime').value = type;
+  isPickupTimeFilled = true;
+  checkInputs(isDriverTypeFilled, isDatePicker, isPickupTimeFilled);
 
   // Change the button text to reflect the current selection
   const dropdownMenuButton = document.getElementById('dropdownMenuButtonPickupTime');
@@ -75,23 +89,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const passengerCount = document.getElementById('passengerCount');
   const submitButton = document.getElementById('submitButton'); 
 
-  // Fungsi untuk memeriksa semua field dan meng-enable atau disable tombol submit
-  function checkInputs() {
-    // Periksa apakah semua input telah terisi
-    if (driverType.value && datePicker.value && pickupTime.value) {
-      submitButton.disabled = false; // Meng-enable tombol jika semua kondisi terpenuhi
-    } else {
-      submitButton.disabled = true;  // Tetap disable jika salah satu belum terpenuhi
-    }
-  }
-
   // Event listener untuk ketiga input
-  driverType.addEventListener('change', checkInputs);
-  datePicker.addEventListener('change', checkInputs);
-  pickupTime.addEventListener('change', checkInputs);
+  // driverType.addEventListener('change', checkInputs);
+  // pickupTime.addEventListener('change', checkInputs);
+  datePicker.addEventListener('change', () => {
+    isDatePicker = true;
+    checkInputs(isDriverTypeFilled, isDatePicker, isPickupTimeFilled);
+    const datePickerContainer = document.getElementById('datePickerContainer');
+    datePickerContainer.classList.add('dropdown--border--selected');
+    datePicker.style.color = 'black';
+  });
+  passengerCount.addEventListener('change', () => {
+    const passengerCountContainer = document.getElementById('passengerCountContainer');
+    passengerCountContainer.classList.add('dropdown--border--selected');
+    passengerCount.style.color = 'black';
+  })
 
-
-  // to deactive overlay
+  // liistener input form
   form.addEventListener('submit', (event) => {
     event.preventDefault()
     // remove overlay
