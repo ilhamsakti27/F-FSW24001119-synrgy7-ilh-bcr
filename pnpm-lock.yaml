@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      custom-select:
+        specifier: ^1.1.15
+        version: 1.1.15
     devDependencies:
       nodemon:
         specifier: ^3.1.0
@@ -41,6 +45,12 @@ packages:
 
   concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
+
+  custom-event-polyfill@0.3.0:
+    resolution: {integrity: sha512-dgGyHwa3sJVUVgnF1IQmPnco4SdAJKllCDXL2W7wyw70vchJTSubthvyjlrxUagc4QZrHq31Dz7p6tzukJ0OgA==}
+
+  custom-select@1.1.15:
+    resolution: {integrity: sha512-hkxx4atVZ6sj0auhgtPPHa8tKuGGkhwrgBZatxOMSLUAVbljQklMzPAqs/H+t8SYPHRL2AFwUJuRiKtq4MltSA==}
 
   debug@4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
@@ -183,6 +193,12 @@ snapshots:
       fsevents: 2.3.3
 
   concat-map@0.0.1: {}
+
+  custom-event-polyfill@0.3.0: {}
+
+  custom-select@1.1.15:
+    dependencies:
+      custom-event-polyfill: 0.3.0
 
   debug@4.3.4(supports-color@5.5.0):
     dependencies:

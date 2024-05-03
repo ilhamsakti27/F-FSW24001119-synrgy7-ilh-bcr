@@ -3,6 +3,8 @@ class App {
     this.clearButton = document.getElementById("clear-btn");
     this.loadButton = document.getElementById("load-btn");
     this.carContainerElement = document.getElementById("cars-container");
+    this.submitButton = document.getElementById("btnSubmit");
+    this.findCarForm = document.getElementById("findCarForm");
   }
 
   async init() {
@@ -11,6 +13,8 @@ class App {
     // Register click listener
     this.clearButton.onclick = this.clear;
     this.loadButton.onclick = this.run;
+    // this.submitButton.onclick = this.run;
+    // this.findCarForm.onsubmit = this.run;
   }
 
   run = () => {

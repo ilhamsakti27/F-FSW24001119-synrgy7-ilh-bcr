@@ -12,5 +12,8 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "custom-select": "^1.1.15"
   }
 }

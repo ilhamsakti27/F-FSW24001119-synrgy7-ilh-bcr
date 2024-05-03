@@ -413,6 +413,74 @@ header {
   margin-bottom: 24px;
 }
 
+/* custom select */
+/* .custom-select-container {
+  width: 300px;
+} */
+.custom-select-opener {
+  white-space: nowrap;
+  /* height: 2.3em; */
+  /* margin-top: 0.5em;
+  margin-bottom: 1em; */
+  border-radius: 2px;
+  /* border: 2px solid #ccc; */
+  border: 1px solid rgba(208, 208, 208, 1)
+}
+.custom-select-opener:focus {
+  outline: none;
+  /* border-color: CornflowerBlue; */
+  border: 1px solid rgba(92, 184, 95, 1)
+}
+.custom-select-opener span {
+  text-overflow: ellipsis;
+  display: block;
+  overflow: hidden;
+}
+.custom-select-panel {
+  border-radius: 2px;
+}
+/* custom select */
+
+/* #driverType {
+  border: 1px solid rgba(208, 208, 208, 1);
+  border-radius: 2px;
+  padding: 9px 12px;
+  gap: 8px;
+  color: rgba(138, 138, 138, 1); */
+  /* //styleName: Body/12/Light; */
+  /* font-family: 'Helvetica', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 18px;
+  text-align: left;
+}
+#driverType:hover {
+  border: 1px solid rgba(92, 184, 95, 1);
+}
+#driverType > option { */
+  /* background-color: #5CB85F; */
+  /* background-color: #F07575; */
+  /* font-family: "Rubik", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 18px;
+  text-align: left;
+  font-weight: bold;
+} */
+/* #driverType > option:hover {
+  background: rgba(201, 231, 202, 1); */
+  /* //styleName: sText S/Medium; */
+  /* font-family: "Rubik", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: left;
+  color: rgba(92, 184, 95, 1);
+}
+#driveType:hover {
+  background-color: pink;
+} */
+
 @media only screen and (min-width: 400px) {
   .header--width {
     width: 100%;

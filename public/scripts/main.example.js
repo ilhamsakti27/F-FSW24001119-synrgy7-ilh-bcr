@@ -13,5 +13,5 @@ console.log(params);
  * Contoh penggunaan DOM di dalam class
  * */
 const app = new App();
-
+app.clear();
 app.init().then(app.run);
